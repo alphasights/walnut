@@ -1,0 +1,66 @@
+@import blueprint/reset
+@import partials/base
+@import blueprint
+@import compass/css3
+body.bp
+  +blueprint-typography(true)
+  +blueprint-utilities
+  +blueprint-debug
+  #container
+    +container
+    height: 768px
+    background-color: black
+  #header, #footer
+    +column($blueprint-grid-columns)
+  #sidebar
+    // One third of the grid columns, rounding down. With 24 cols, this is 8.
+    $sidebar-columns: floor($blueprint-grid-columns / 3)
+    +column($sidebar-columns)
+  .template
+    display: none
+  #content
+    +column($blueprint-grid-columns)
+    .service
+      background-color: gray
+      +column($blueprint-grid-columns/5)
+      margin-bottom: 10px
+      height: 250px
+      +border-radius
+      &.success
+        background-color: green
+        .indicator
+          background-image: url(../images/success.png)
+      &.failure
+        background-color: red
+        .indicator
+          background-image: url(../images/failure.png)
+      &.unknown
+        background-color: #C1C1C1
+        .indicator
+          background-image: url(../images/unknown.png)
+      &.waiting
+        .indicator
+          background-image: url(../images/waiting.png)
+      &.pending
+        background-color: gray
+        .indicator
+          background-image: url(../images/pending.png)
+      &:nth-child(5n)
+        +last
+      .title
+        +text-shadow
+        font-weight: bold
+        text-transform: uppercase
+        font-size: 300%
+        text-align: center
+        +column($blueprint-grid-columns/5, true)
+        height: 125px
+        .text
+          margin-top: 20px
+          color: black
+          +opacity(0.5)
+      .indicator
+        +column($blueprint-grid-columns/5, true)
+        height: 125px
+        background: url(../images/waiting.png) no-repeat center center
+        +opacity(0.8)

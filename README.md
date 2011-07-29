@@ -112,4 +112,5 @@ Credits
 =======
 
 John Griffin, Tor Erik Linnerud, Tadas Tamosauskas
-Icons: [Glyphich free icon set](http://glyphish.com/)
+
+Icons: [Glyphish free icon set](http://glyphish.com/)

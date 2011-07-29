@@ -1,4 +1,4 @@
-Open Nut Monitor
+Open Nut
 =================
 
 This is a tiny pure JS/HTML/CSS app for monitoring third party services, integrating with CI or whatever you like and displaying it on your wall!
@@ -7,8 +7,8 @@ Features
 ========
 
 * No deployment: JS only
-* Four visual states for services
-* Plays [inception](http://inception.davepedu.com/) sound if a service fails
+* Five visual states for services
+* Plays the [inception](http://inception.davepedu.com/) sound if a service fails
 * Polls server every 20 seconds
 * Non-blocking
 * Good for displaying on a flatscreen TV
@@ -27,7 +27,7 @@ Service States
 Limitations
 ==========
 
-Due to security reasons browsers do not allow cross-domain AJAX requests, therefore you have to configure your browser accordingly. Please do it at your own risk!
+Due to security reasons browsers do not allow cross-domain AJAX requests, therefore you have to configure your browser accordingly. Please do so at your own risk!
 
 Safari
 ------
@@ -37,7 +37,7 @@ Seems to work by default.
 Chrome
 ------
 
-You will have to disable web security. You will have to pass a `-disable-web-security` flag when starting chrome.
+You will have to disable web security. Pass `-disable-web-security` when starting chrome.
 Eg. in OS X:
 
     open /Applications/Google\ Chrome.app --args -disable-web-security

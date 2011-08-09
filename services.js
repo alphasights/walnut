@@ -57,3 +57,11 @@ Service({
   }
 })
 
+Service({
+  name: 'CloudMailin',
+  url: 'http://cloudmailin-status.herokuapp.com/',
+  status: function(response) {
+    var status = response["status"];
+    return  (status == "up" || status == "reduced_capacity")
+  }
+})

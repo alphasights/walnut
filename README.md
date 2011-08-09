@@ -1,7 +1,7 @@
 Open Nut
 =================
 
-This is a tiny pure JS/HTML/CSS app for monitoring third party services, integrating with CI or whatever you like and displaying it on your wall!
+This is a tiny pure JS/HTML/CSS app for monitoring third party services, integrating with CI, London metro or whatever you like and displaying it on your wall!
 
 Features
 ========
@@ -59,6 +59,8 @@ Monitored Services
 * Pusher App
 * Rackspace Email
 * Github
+* Cloudmailin
+* London Underground Jubilee line (!)
 
 Monitoring other services
 =========================

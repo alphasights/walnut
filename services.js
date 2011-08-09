@@ -65,3 +65,14 @@ Service({
     return  (status == "up" || status == "reduced_capacity")
   }
 })
+
+// http://tubeupdates.com/documentation/
+Service({
+  name: 'Jubilee Line',
+  url: 'http://api.tubeupdates.com/\?method\=get.status\&lines\=jubilee',
+  status: function(response) {
+    var status = response["response"]["lines"][0]["status"];
+    return status == "good service"
+  }
+})
+

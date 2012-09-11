@@ -1,16 +1,18 @@
 Service({
   name: 'Heroku App operations',
-  url: 'http://status.heroku.com/',
+  url: 'https://status.heroku.com/api/v3/current-status',
+  dataType: "json",
   status: function(response) {
-    return $(response).find('.status .app').hasClass('green')
+    return response["status"]["Production"].toLowerCase() == "green";
   }
 })
 
 Service({
   name: 'Heroku Tools',
-  url: 'http://status.heroku.com/',
+  url: 'https://status.heroku.com/api/v3/current-status',
+  dataType: "json",
   status: function(response) {
-    return $(response).find('.status .tools').hasClass('green')
+    return response["status"]["Development"].toLowerCase() == "green";
   }
 })
 
@@ -51,9 +53,10 @@ Service({
 
 Service({
   name: 'Github',
-  url: 'http://status.github.com/',
+  url: 'http://status.github.com/status.json',
+  dataType: "json",
   status: function(response) {
-    return $(response).hasClass('noproblems')
+    return response["status"] != "majorproblem" && response["status"] != "minorproblem";
   }
 })
 
@@ -76,3 +79,10 @@ Service({
   }
 })
 
+Service({
+  name: 'Exceptional',
+  url: 'http://status.getexceptional.com/',
+  status: function(response) {
+    return $(response).find("#Currently strong").first().html() < 5000
+  }
+})

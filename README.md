@@ -56,10 +56,12 @@ Monitored Services
 * Heroku Tools
 * Amazon EC2 N.Virginia (Heroku lives there)
 * MongoHQ Rose
+* Mongolab DB
 * Pusher App
 * Rackspace Email
 * Github
 * Cloudmailin
+* Exceptional
 * London Underground Jubilee line (!)
 
 Monitoring other services

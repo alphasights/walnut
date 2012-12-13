@@ -79,7 +79,7 @@ It is very easy to add any service you want. Just add another service to the `se
                                               // a function to parse the response.
                                               // must return true, false or "pending"
       status: function(response) {            // In case of HTML response jQuery can be used
-        return JSON.parse(response)["status"].length == "ok";
+        return JSON.parse(response)["status"] == "ok";
       }
     });
 

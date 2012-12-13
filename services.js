@@ -30,7 +30,13 @@ Service({
   name: 'MongoHQ Rose',
   url: 'http://status.mongohq.com/api/v1/services/rose/events',
   status: function(response) {
-    return JSON.parse(response)["events"].length === 0;
+    var parsed_response = JSON.parse(response)["events"];
+
+    if( parsed_response.length !== 0 ){
+      var level =  parsed_response[0]["status"]["level"];
+      return level == "NORMAL" || level == "INFO";
+    }
+    return true;
   }
 });
 

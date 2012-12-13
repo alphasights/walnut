@@ -17,7 +17,7 @@ $(function() {
 
   function handle_result(service, result, status) {
     if(status == 'success') {
-      if(result.replace)
+      if(result && result.replace)
         result = result.replace(/body|img/gi, 'div')
       status = service.status(result)
       removeClasses(service)

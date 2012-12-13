@@ -92,3 +92,21 @@ Service({
     return $(response).find("#Currently strong").first().html() < 5000;
   }
 });
+
+Service({
+  name: 'Mongolab DB',
+  url : "https://api.mongolab.com:443/api/1/"
+         + "clusters/rs-dbh97/databases/mongolab-status/"
+         + "collections/public-status-events?"
+         + "q={ '$and': [  {'timeResolved': {'$exists': false}},"
+         +      encodeURI("{'timeStarted': {'$lt': {'$date': '" + (new Date()).toISOString() + "'}}},")
+         +                "{'published': true},"
+         +                "{'serviceType': 'DB'}  ] }"
+         + "&fo=true"
+         + "&s={'timeStarted': -1}"
+         + "&apiKey=4f023946e4b0d227da1b51d8",
+  status: function(response) {
+    console.log(response);
+    return response === null;
+  }
+});

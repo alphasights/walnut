@@ -53,10 +53,10 @@ Service({
 
 Service({
   name: 'Github',
-  url: 'http://status.github.com/status.json',
+  url: 'https://status.github.com/api/status.json',
   dataType: "json",
   status: function(response) {
-    return response["status"] != "majorproblem" && response["status"] != "minorproblem";
+    return response["status"] == "good";
   }
 });
 

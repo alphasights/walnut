@@ -13,9 +13,9 @@ Features
 * Non-blocking
 * Good for displaying on a flatscreen TV
 
-Here's how it [looks like on our wall](http://alphadev.tumblr.com/post/7651471438/hazel-is-a-rails-monitoring-app-which-keeps-an-eye).
+<img src="http://i.imgur.com/4lKdJ6X.jpg?1"/>
 
-<img src="http://i.imgur.com/U8nTW.png?6291"/>
+[Screenshot](http://i.imgur.com/U8nTW.png?6291)
 
 Service States
 --------------

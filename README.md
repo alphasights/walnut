@@ -63,6 +63,7 @@ Monitored Services
 * Cloudmailin
 * Exceptional
 * London Underground Jubilee line (!)
+* Twilio
 
 Monitoring other services
 =========================
@@ -107,7 +108,7 @@ You shouldn't need to touch `app.js` at all.
 Styling
 =======
 
-You should modify `src/screen.sass`. We are using [compass](https://github.com/chriseppstein/compass). To compile it to css just run `compass watch` in a project directory. You can also modify `stylesheets/screen.css` directly if you can't use compass for some serious reason.
+You should modify `src/screen.sass`. To compile it to css just run `sass src/screen.sass stylesheets/screen.css` in a project directory. You can also modify `stylesheets/screen.css` directly if you can't use sass for some serious reason.
 
 Contributing
 ============

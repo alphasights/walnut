@@ -1,66 +1,78 @@
-@import blueprint/reset
-@import partials/base
-@import blueprint
-@import compass/css3
+html, div, body
+  padding: 0
+  margin: 0
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 body.bp
-  +blueprint-typography(true)
-  +blueprint-utilities
-  +blueprint-debug
-  #container
-    +container
-    height: 768px
-    background-color: black
-  #header, #footer
-    +column($blueprint-grid-columns)
-  #sidebar
-    // One third of the grid columns, rounding down. With 24 cols, this is 8.
-    $sidebar-columns: floor($blueprint-grid-columns / 3)
-    +column($sidebar-columns)
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif
+  background-color: black
   .template
     display: none
-  #content
-    +column($blueprint-grid-columns)
-    .service
-      background-color: gray
-      +column($blueprint-grid-columns/5)
-      margin-bottom: 10px
-      height: 250px
-      +border-radius
-      &.success
-        background-color: green
-        .indicator
-          background-image: url(../images/success.png)
-      &.failure
-        background-color: red
-        .indicator
-          background-image: url(../images/failure.png)
-      &.unknown
-        background-color: #C1C1C1
-        .indicator
-          background-image: url(../images/unknown.png)
-      &.waiting
-        .indicator
-          background-image: url(../images/waiting.png)
-      &.pending
-        background-color: gray
-        .indicator
-          background-image: url(../images/pending.png)
-      &:nth-child(5n)
-        +last
-      .title
-        +text-shadow
-        font-weight: bold
-        text-transform: uppercase
-        font-size: 300%
-        text-align: center
-        +column($blueprint-grid-columns/5, true)
-        height: 125px
-        .text
-          margin-top: 20px
-          color: black
-          +opacity(0.5)
-      .indicator
-        +column($blueprint-grid-columns/5, true)
-        height: 125px
-        background: url(../images/waiting.png) no-repeat center center
-        +opacity(0.8)
+
+#content
+  max-width: 100%
+  max-height: 100%
+  overflow: hidden
+.service
+  background-color: gray
+  border-radius: 5px
+  &.success
+    background-color: green
+    .indicator
+      background-image: url(../images/success.png)
+  &.failure
+    background-color: red
+    .indicator
+      background-image: url(../images/failure.png)
+  &.unknown
+    background-color: #C1C1C1
+    .indicator
+      background-image: url(../images/unknown.png)
+  &.waiting
+    .indicator
+      background-image: url(../images/waiting.png)
+  &.pending
+    background-color: gray
+    .indicator
+      background-image: url(../images/pending.png)
+.title
+  text-shadow: 0px 0px 1px #aaaaaa
+  font-weight: bold
+  font-size: 1.8em
+  padding-top: 1em
+  text-transform: uppercase
+  text-align: center
+  color: black
+  opacity: 0.5
+.indicator
+  background: url(../images/waiting.png) no-repeat center center
+  opacity: 0.8
+
+// Positioning
+$rows: 3
+$columns: 4
+.service
+  width: (100% - $columns + 1) / $columns
+  margin-right: 1%
+
+  height: (100% - $rows - 1) / $rows
+  margin-bottom: 1%
+
+  float: left
+  position: relative
+  &:nth-child(#{$columns}n + 0)
+    margin-right: 0
+  &:nth-child(n + #{$columns * ($rows - 1) + 1})
+    margin-bottom: 0
+
+$indicator-size: 60px
+.indicator
+  width: $indicator-size
+  height: $indicator-size
+  margin: 0 auto
+  position: absolute
+  top: 45%
+  left: 50%
+  margin-left: - $indicator-size / 2

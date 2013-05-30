@@ -110,3 +110,17 @@ Service({
     return response === null;
   }
 });
+
+Service({
+  name: 'Twilio',
+  url: 'http://status.twilio.com',
+  status: function(response) {
+    $(response).find(".status.highlight .sym").map(function(idx, img){
+      if( !$(img).attr("src").match(/tick/) ){
+        return false;
+      }
+    });
+    return true;
+  }
+});
+

@@ -32,7 +32,7 @@ $(function() {
     check = function() {
       check_service(service)
     }
-    setTimeout(check, 20000);
+    setTimeout(check, service.interval || 20000);
   }
 
   function check_service(service) {
@@ -49,7 +49,6 @@ $(function() {
        error: on_error,
        success: on_result,
        dataType: service.dataType,
-       cache: false,
        timeout: 3500,
      });
   }
@@ -57,7 +56,7 @@ $(function() {
   function initialize_service(n, service) {
     box = service.box = $('.service.template').clone()
     box.removeClass('template')
-    box.find('.title .text').text(service.name)
+    box.find('.title').text(service.name)
     $('#content').append(box)
     check_service(service);
   }

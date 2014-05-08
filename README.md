@@ -64,6 +64,10 @@ Monitored Services
 * Exceptional
 * London Underground Jubilee line (!)
 * Twilio
+* Plex
+* SickBeard
+* Couch Potato
+* SABnzbd
 
 Monitoring other services
 =========================

@@ -124,3 +124,41 @@ Service({
   }
 });
 
+Service({
+  name: 'Plex',
+  url: 'http://your.plex.server:32400',
+  dataType: "xml",
+  status: function(response) {
+    return $(response).find('MediaContainer').size() > 0;
+  }
+});
+
+Service({
+  name: 'SickBeard',
+  url: 'https://your.sickbeard.server/api/your-api-key/?cmd=sb.ping',
+  dataType: "jsonp",
+  status: function(response) {  
+    return response["result"].toLowerCase() == "success";
+  }
+});
+
+Service({
+  name: 'Couch Potato',
+  url: 'https://your.couchpotato.server/api/your-api-key/app.available',
+  dataType: "jsonp",
+  jsonp: 'callback_func',
+  status: function(response) {
+    return response["success"];
+  }
+});
+
+Service({
+  name: 'SABnzbd',
+  url: 'https://your.sabnzbd.server/sabnzbd/api?mode=qstatus&output=json&apikey=your-api-key',
+  dataType: "jsonp",
+  status: function(response) {
+    return response["state"] != '';
+  }
+});
+
+

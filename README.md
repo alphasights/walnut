@@ -64,6 +64,10 @@ Monitored Services
 * Exceptional
 * London Underground Jubilee line (!)
 * Twilio
+* Plex
+* SickBeard
+* Couch Potato
+* SABnzbd
 
 Monitoring other services
 =========================
@@ -104,6 +108,14 @@ Example of how to monitor Jenkins CI. Will display grey icon while building
     });
 
 You shouldn't need to touch `app.js` at all.
+
+HTTPS URLs using self-signed certificates
+-----------------------------------------
+
+You may want to monitor an HTTPS service that uses a self-signed certificate. Your
+browser will abort request unless you trust that certificate. To do so, open the 
+service's URL in your browser, and accept whatever security exception your browser
+requires.
 
 Styling
 =======

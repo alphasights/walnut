@@ -49,6 +49,7 @@ $(function() {
        error: on_error,
        success: on_result,
        dataType: service.dataType,
+       jsonp: service.jsonp,
        timeout: 3500,
      });
   }

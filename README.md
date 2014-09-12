@@ -1,4 +1,4 @@
-Open Nut
+Walnut
 =================
 
 This is a tiny pure JS/HTML/CSS app for monitoring third party services, integrating with CI, London metro or whatever you like and displaying it on your wall!

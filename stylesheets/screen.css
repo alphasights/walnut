@@ -1,0 +1,76 @@
+html, div, body {
+  padding: 0;
+  margin: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body.bp {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background-color: black; }
+  body.bp .template {
+    display: none; }
+
+#content {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden; }
+
+.service {
+  background-color: gray;
+  border-radius: 5px; }
+  .service.success {
+    background-color: green; }
+    .service.success .indicator {
+      background-image: url(../images/success.png); }
+  .service.failure {
+    background-color: red; }
+    .service.failure .indicator {
+      background-image: url(../images/failure.png); }
+  .service.unknown {
+    background-color: #c1c1c1; }
+    .service.unknown .indicator {
+      background-image: url(../images/unknown.png); }
+  .service.waiting .indicator {
+    background-image: url(../images/waiting.png); }
+  .service.pending {
+    background-color: gray; }
+    .service.pending .indicator {
+      background-image: url(../images/pending.png); }
+
+.title {
+  text-shadow: 0px 0px 1px #aaaaaa;
+  font-weight: bold;
+  font-size: 1.8em;
+  padding-top: 1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+  opacity: 0.5; }
+
+.indicator {
+  background: url(../images/waiting.png) no-repeat center center;
+  opacity: 0.8; }
+
+.service {
+  width: 24.25%;
+  margin-right: 1%;
+  height: 32%;
+  margin-bottom: 1%;
+  float: left;
+  position: relative; }
+  .service:nth-child(4n + 0) {
+    margin-right: 0; }
+  .service:nth-child(n + 9) {
+    margin-bottom: 0; }
+
+.indicator {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -30px; }
